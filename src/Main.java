@@ -5,12 +5,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-        String[] rom10 = {"P","X","XX","XXX","XL","L","LX","LXX","LXXX","XC","C"};
-        String[] rom = {null,"I","II","III","IV","V","VI","VII","VIII","IX","X"};
-
-        String num;
-        String sign;
-        String num2;
         System.out.println("Ввод: ");
         Scanner zeroScan =new Scanner(System.in);
         System.out.println(calc(zeroScan.nextLine()));
@@ -79,19 +73,13 @@ public class Main {
                         }
 
 
-                        switch (signForAr) {
-                            case "+":
-                                return String.valueOf((ar + ar2));
-                            case "-":
-                                return String.valueOf((ar - ar2));
-                            case "/":
-                                return String.valueOf((ar / ar2));
-                            case "*":
-                                return String.valueOf((ar * ar2));
-
-                            default:
-                                throw new IllegalStateException("Unexpected value: " + sign);
-                        }
+            return switch (signForAr) {
+                case "+" -> String.valueOf((ar + ar2));
+                case "-" -> String.valueOf((ar - ar2));
+                case "/" -> String.valueOf((ar / ar2));
+                case "*" -> String.valueOf((ar * ar2));
+                default -> throw new IllegalStateException("Unexpected value: " + sign);
+            };
 
                     }
     }
