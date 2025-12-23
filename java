@@ -37,6 +37,8 @@ public class SingleLineCalculator {
         
         System.out.println("Result: " + result);
         System.out.println("Done");
+        
+        scanner.close();
     }
 }
 
